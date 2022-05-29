@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Rock Paper Scissors</title>
+    <style>
+        body{
+            background-color:chartreuse;
+        }
+        #main{
+            display:flex;
+            flex-direction: column;
+            align-items:space-evenly;
+        }
+        .img{height: 100px; width: 100px;
+        margin:57px;
+       
+    }
+    .img:hover { 
+        transform: translateX(35px);
+    }
+      #calc{
+          height:42px;
+          width:300px;
+          background-color: yellow;
+          color:navy;
+          border-radius:8px;
+          margin:5px;
+          text-align:center;
+          box-shadow: 0px 4px 5px 6px white, 2px 7px 8px 9px peachpuff;
+      }
+      #calc2{
+          height:78px;
+          width:300px;
+          background-color: yellow;
+          color:navy;
+          border-radius:8px;
+          margin:5px;
+          text-align:center;
+          box-shadow: 0px 4px 5px 6px white, 2px 7px 8px 9px peachpuff;
+          
+      }
+     #screen{
+ 
+         display:flex;
+         justify-content:center;
+   
+  
+     }
+
+    </style>
+    
+
+</head>
+<body>
+    <div id="screen">
+    <div id="calc"></div>
+    <div id="calc2"></div>
+   </div>   
+   <!-- 1st screen end  -->
+
+   <div id="main">
+    <img src="rock.png" class="img"  id="rock"  onclick="rock()"> 
+    <img src="paper.png" class="img"  id="paper"  onclick="paper()"> 
+    <img src="scissors.png" class="img"  id="scissor"  onclick="scissors()">
+ </div>
+ 
+<!-- HERE GOES THE JS  -->
+<script>
+   for(var i = 0;i<3;i++){
+    function rock()
+    {
+
+            // 1 for rock 2 for paper 3 for scissor
+      var user;
+       user = 1;
+    var comp = Math.floor((Math.random()*3)+1);
+    // document.write(comp);
+       
+    if (user == 1 && comp == 1) {
+        document.getElementById("calc").innerText = "Match Draw";
+    
+        // alert("game's draw");
+    }
+    else if(user == 1 && comp == 2 )
+       {
+         document.getElementById("calc").innerText = "You Lose";
+        
+        //    alert("computer win's");
+       }
+      
+    else if(user == 1 && comp == 3 )
+       {
+        document.getElementById("calc").innerText = "You Lose";
+        
+        //    alert("player win's");
+       }
+       document.getElementById("calc2").innerText = "computer choose"+comp+"\n 1 means rock\n2 means paper\n3 means scissors";
+    //    alert("computer choose "+comp+"\n 1 means rock\n2 means paper\n3 means scissors");
+  }
+    function paper()
+    {  var user;
+         user = 2;
+         var comp = Math.floor((Math.random()*3)+1);
+    // document.write(comp);
+       
+    if(user == 2 && comp == 2 )
+       {
+        document.getElementById("calc").innerText = "Match Draw";
+        //    alert("game's draw");
+       }
+         // 1 for rock 2 for paper 3 for scissor
+ 
+       else if(user == 2 && comp == 3 )
+       {
+        document.getElementById("calc").innerText = "You Lose";
+        //    alert("computer win's");
+       }   
+    
+     else if (user == 2 && comp == 1) 
+     {
+        document.getElementById("calc").innerText = "You Win";
+    //   alert("player win");   
+     }
+     document.getElementById("calc2").innerText = "computer choose"+comp+"\n 1 means rock\n2 means paper\n3 means scissors";
+    //  alert("computer choose"+comp+"\n 1 means rock\n2 means paper\n3 means scissors");
+  
+    }
+    function scissors()
+    {   var user;
+       user = 3;
+       var comp = Math.floor((Math.random()*3)+1);
+    // document.write(comp);
+       
+      // 1 for rock 2 for paper 3 for scissor
+    
+      if(user == 3 && comp == 3)
+     {
+        document.getElementById("calc").innerText = "Match Draw";
+        //  alert("game draw's");
+     }  
+     else if(user == 3 && comp == 1)
+     {
+        document.getElementById("calc").innerText = "You Lose";
+        //  alert("computer's wins")
+     }
+     else if (user == 3 && comp == 2) 
+     {
+        document.getElementById("calc").innerText = "You win";
+    //   alert("player win");   
+     }
+     document.getElementById("calc2").innerText = "computer choose"+comp+"\n 1 means rock\n2 means paper\n3 means scissors";
+    //  alert("");
+    }
+ 
+
+   }
+</script>
+</body>
+</html>
